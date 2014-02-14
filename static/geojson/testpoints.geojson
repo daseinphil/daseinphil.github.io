@@ -1,0 +1,8 @@
+var testpoints = 
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [42.37930860056589,-71.09917178720752]
+  } 
+};
