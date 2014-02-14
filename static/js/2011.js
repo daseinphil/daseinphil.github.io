@@ -1,3 +1,8 @@
+var cadetblueMarker = L.AwesomeMarkers.icon({
+	icon: 'glyphicon glyphicon-tint',
+	markerColor: 'cadetblue'
+});
+
 var group2011 = new L.LayerGroup();
 
 L.marker([ 42.38667999988223,  -71.09825999969905], {icon: cadetblueMarker}).bindPopup('<table border=0><tr><td>Address</td><td>0 ARLINGTON ST </td></tr><tr><td>Date</td><td>12/27/2011</td> </tr></table>').addTo(group2011);

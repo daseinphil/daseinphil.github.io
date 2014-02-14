@@ -21,22 +21,11 @@
 	<script src="static/js/leaflet.awesome-markers.js"></script>
 	<script src="static/js/2009.js"></script>
 	<script src="static/js/2010.js"></script>
+	<script src="static/js/2011.js"></script>
+	<script src="static/js/2012.js"></script>
+	
 	
 	<script>
-		var redMarker = L.AwesomeMarkers.icon({
-			icon: 'glyphicon glyphicon-tint',
-	  		markerColor: 'red'
-		});
-
-		var cities = new L.LayerGroup();
-
-	    L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
-		L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
-		L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
-		L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
-		L.marker([42.37930860056589, -71.09917178720752], {icon: redMarker}).bindPopup('<table border=0><tr><td>ticket</td><td>85858</td> </tr><tr><td>date</td><td>DATE</td> </tr></table>').addTo(cities);
-
-		
 	    var cmAttr = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
 			cmUrl = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/{styleId}/256/{z}/{x}/{y}.png';
 
@@ -45,20 +34,21 @@
 		    motorways = L.tileLayer(cmUrl, {styleId: 46561, attribution: cmAttr});
 
 		var map = L.map('map', {
-			center: [42.38, -71.10],
+			center: [42.391, -71.10],
 			zoom: 13,
-			layers: [minimal, cities]
+			layers: [midnight, group2009]
 		});
 
 		var baseLayers = {
-			"Minimal": minimal,
-			"Night View": midnight
+			"Night View": midnight,
+			"Minimal": minimal
 		};
 
 		var overlays = {
-			"Cities": cities,
 			"2009": group2009,
-			"2010": group2010
+			"2010": group2010,
+			"2011": group2011,
+			"2012": group2012
 		};
 
 		L.control.layers(baseLayers, overlays).addTo(map);
