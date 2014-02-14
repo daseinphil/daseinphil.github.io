@@ -5,7 +5,7 @@ rawData = csv.reader(open('311_clean.csv', 'rb'))
  
 template = """L.marker([%s, %s]).bindPopup('<table border=0><tr><td>Address</td><td>%s</td></tr><tr><td>Date</td><td>%s</td> </tr></table>').addTo(%s);"""
 
-print "var group2009 = new L.LayerGroup();\n"
+print "var group2010 = new L.LayerGroup();\n"
 
 for row in rawData:
 	date = row[0]
@@ -23,7 +23,7 @@ for row in rawData:
 		group = "group2012" 
 	else:
 		group = ""
-	if "2009" in date:
+	if "2010" in date:
 		print template % (lat, lng, date, address, group)
 	
 

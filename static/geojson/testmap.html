@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Leaflet Layers Control Example</title>
+	<title>Somerville Graffiti Removal Distribution</title>
 	<meta charset="utf-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +13,9 @@
 	<div id="map" style="width: 800px; height: 600px"></div>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.js"></script>
+	<script src="2009.js"></script>
+	<script src="2010.js"></script>
+	
 	<script>
 		var cities = new L.LayerGroup();
 
@@ -22,18 +24,6 @@
 		L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
 		L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
 		L.marker([42.37930860056589, -71.09917178720752]).bindPopup('<table border=0><tr><td>ticket</td><td>85858</td> </tr><tr><td>date</td><td>DATE</td> </tr></table>').addTo(cities);
-
-		var group2009 = new L.LayerGroup();
-
-		L.marker([ 42.38667999988223,  -71.09825999969905]).bindPopup('<table border=0><tr><td>Address</td><td>12/31/2009</td></tr><tr><td>Date</td><td>HOWARD ST AT THORNDIKE ST</td> </tr></table>').addTo(group2009);
-		L.marker([ 42.38667999988223,  -71.09825999969905]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>0 HERBERT ST </td> </tr></table>').addTo(group2009);
-		L.marker([ 42.38667999988223,  -71.09825999969905]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>0 HERBERT ST </td> </tr></table>').addTo(group2009);
-		L.marker([ 42.38667999988223,  -71.09825999969905]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>CARLTON ST AT LAKE ST</td> </tr></table>').addTo(group2009);
-		L.marker([ 42.37941102282463,  -71.10088273931444]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>318 WASHINGTON ST </td> </tr></table>').addTo(group2009);
-		L.marker([ 42.37727063639494,  -71.10330191557324]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>103 MARION ST </td> </tr></table>').addTo(group2009);
-		L.marker([ 42.38598506685884,  -71.08205093602089]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>13 ARLINGTON ST </td> </tr></table>').addTo(group2009);
-		L.marker([ 42.38598506685884,  -71.08205093602089]).bindPopup('<table border=0><tr><td>Address</td><td>12/29/2009</td></tr><tr><td>Date</td><td>13 ARLINGTON ST </td> </tr></table>').addTo(group2009);
-
 		
 	    var cmAttr = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
 			cmUrl = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/{styleId}/256/{z}/{x}/{y}.png';
@@ -55,7 +45,8 @@
 
 		var overlays = {
 			"Cities": cities,
-			"group2009": group2009
+			"2009": group2009,
+			"2010": group2010
 		};
 
 		L.control.layers(baseLayers, overlays).addTo(map);
