@@ -16,11 +16,11 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/organization-detail/:id', {templateUrl: 'partials/organization-detail.html', controller: 'OrganizationDetailCtrl'});
   $routeProvider.when('/organization-creation', {templateUrl: 'partials/organization-create.html', controller: 'OrganizationCreationCtrl'});
 
-  $routeProvider.when('/users', {templateUrl: 'partials/users-list.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/users', {templateUrl: 'partials/users-list.html', controller: 'UsersCtrl'});
   $routeProvider.when('/user-detail/:id', {templateUrl: 'partials/user-detail.html', controller: 'UserDetailCtrl'});
   $routeProvider.when('/user-creation', {templateUrl: 'partials/user-create.html', controller: 'UserCreationCtrl'});
 
-  $routeProvider.when('/vendors', {templateUrl: 'partials/vendors-list.html', controller: 'MyCtrl2'});
+  $routeProvider.when('/vendors', {templateUrl: 'partials/vendors-list.html', controller: 'VendorsCtrl'});
   $routeProvider.when('/vendor-detail/:id', {templateUrl: 'partials/vendor-detail.html', controller: 'VendorDetailCtrl'});
   $routeProvider.when('/vendor-creation', {templateUrl: 'partials/vendor-create.html', controller: 'VendorCreationCtrl'});
 

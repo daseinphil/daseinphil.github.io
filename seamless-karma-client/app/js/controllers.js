@@ -5,7 +5,7 @@ app.controller('LandingCtrl', function($scope) {
 });
 
 
-app.controller('MyCtrl1', ['$scope', 'UsersFactory', 'UserFactory', '$location',
+app.controller('UsersCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$location',
     function ($scope, UsersFactory, UserFactory, $location) {
 
         // callback for ng-click 'editUser':
@@ -59,7 +59,7 @@ app.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
        }
     }]);
 
-app.controller('MyCtrl2', ['$scope', 'VendorsFactory', 'VendorFactory', '$location',
+app.controller('VendorsCtrl', ['$scope', 'VendorsFactory', 'VendorFactory', '$location',
     function ($scope, VendorsFactory, VendorFactory, $location) {
 
 	// callback for ng-click 'editVendor':
@@ -122,7 +122,7 @@ app.controller('OrgsCtrl', ['$scope', 'OrgsFactory', 'OrgFactory', '$location',
 
 	// callback for ng-click 'deleteOrganization':
 	$scope.deleteOrganization = function (Id) {
-	    OrgsFactory.delete({ id: Id });
+	    OrgFactory.delete({ id: Id });
 	    $scope.organizations = OrgsFactory.query();
 	};
 
@@ -148,7 +148,7 @@ app.controller('OrganizationDetailCtrl', ['$scope', '$routeParams', 'OrgFactory'
       $location.path('/organizations');
     };
 
-    $scope.organizations = OrgFactory.show({id: $routeParams.id});
+    $scope.organization = OrgFactory.show({id: $routeParams.id});
   }]);
 
 app.controller('OrganizationCreationCtrl', ['$scope', 'OrgsFactory', '$location',
